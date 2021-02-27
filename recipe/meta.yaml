@@ -1,5 +1,5 @@
 {% set name = "tributary" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bb628f2fbdbbb581817544886c92e5bdf34aefd57440a1677eee946eea802f70
+  sha256: 387c4f5fe7c06f7e5a1f9df3f431cb352e5e2085b8ca0dda0fa842df55cf6b40
 
 build:
-  number: 3
+  number: 0
   skip: true  # [py<37 or (win)]
   script: {{ PYTHON }} -m pip install . -vv
 
