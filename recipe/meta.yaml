@@ -25,6 +25,8 @@ requirements:
     - aiohttp >=3.5.4
     - aiohttp-sse >=2.1
     - aiohttp-sse-client >=0.2.1
+    - aiokafka >=0.6.0
+    - aiostream >=0.4.3
     - asyncpg >=0.20.1
     - beautifulsoup4 >=4.9.1
     - boltons >=20.1.0
