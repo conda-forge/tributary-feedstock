@@ -10,16 +10,16 @@ source:
   sha256: 2815a2d2083d019d9ecfe183dbae27e526beacd4156790f761d21a6baa5e9d75
 
 build:
-  number: 0
-  skip: true  # [py<37 or (win)]
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
+    - python >=3.7
     - aioconsole >=0.4.1
     - aiofiles >=0.4.0
     - aiohttp >=3.5.4
