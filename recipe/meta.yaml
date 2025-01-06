@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7f99e8257e989fabf5bb60b06dea5dd10d13c14b90de93490855d5b68d6c6fe6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - aioconsole >=0.4.1
     - aiofiles >=0.4.0
     - aiohttp >=3.5.4
@@ -49,6 +49,8 @@ requirements:
     - websockets >=8.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tributary
 
